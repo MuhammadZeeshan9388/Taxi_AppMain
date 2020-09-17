@@ -1,0 +1,1859 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DummyDataSource">
+      <rd:DataSourceID>d741db32-f756-4a61-ace3-66b986646911</rd:DataSourceID>
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="Report_Parameter_Address">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_Address</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_Telephone">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_Telephone</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_Path">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_Path</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_InvoiceTotal">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_InvoiceTotal</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_HasVat">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_HasVat</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_VAT">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_VAT</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_CompanyHeader">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_CompanyHeader</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_SortCode">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_SortCode</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_AccountNo">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_AccountNo</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_AccountTitle">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_AccountTitle</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_Bank">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_Bank</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_HasDepartment">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_HasDepartment</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_Net">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_Net</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_HasCostCenter">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_HasCostCenter</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_Footer">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_Footer</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_Email">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_Email</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_MobileNo">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_MobileNo</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_Website">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_Website</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_Discount">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_Discount</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_HasBankDetails">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_HasBankDetails</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_CompanyNumber">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_CompanyNumber</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_VATNumber">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_VATNumber</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_AdminFeeLabel">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_AdminFeeLabel</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_AdminFeeValue">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_AdminFeeValue</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_IBAN">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_IBAN</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_BLC">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_BLC</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_Fax">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_Fax</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Report_Parameter_EmergencyNo">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_EmergencyNo</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <BottomMargin>0.1in</BottomMargin>
+  <rd:ReportID>d0ea3527-ad2f-4df4-aad9-e8ad4e468ea7</rd:ReportID>
+  <DataSets>
+    <DataSet Name="Taxi_Model_vu_Invoice">
+      <Fields>
+        <Field Name="AdminFees">
+          <DataField>AdminFees</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="AdminFeesLabel">
+          <DataField>AdminFeesLabel</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BookingId">
+          <DataField>BookingId</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Int64, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="BookingNo">
+          <DataField>BookingNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Charges">
+          <DataField>Charges</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CompanyId">
+          <DataField>CompanyId</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="CompanyMobNo">
+          <DataField>CompanyMobNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CompanyTelNo">
+          <DataField>CompanyTelNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CongtionCharges">
+          <DataField>CongtionCharges</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="CustomerAddress1">
+          <DataField>CustomerAddress1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustomerAddress2">
+          <DataField>CustomerAddress2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustomerId">
+          <DataField>CustomerId</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="CustomerMobileNo">
+          <DataField>CustomerMobileNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustomerName">
+          <DataField>CustomerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustomerTelephoneNo">
+          <DataField>CustomerTelephoneNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DepartmentId">
+          <DataField>DepartmentId</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Int64, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="DepartmentName">
+          <DataField>DepartmentName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DepartmentWise">
+          <DataField>DepartmentWise</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="ExtraDropCharges">
+          <DataField>ExtraDropCharges</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="FareDeductionPercent">
+          <DataField>FareDeductionPercent</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="FromAddress">
+          <DataField>FromAddress</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="HasOrderNo">
+          <DataField>HasOrderNo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="HasPupilNo">
+          <DataField>HasPupilNo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Id">
+          <DataField>Id</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="InvoiceDate">
+          <DataField>InvoiceDate</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="InvoiceNo">
+          <DataField>InvoiceNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InvoiceTotal">
+          <DataField>InvoiceTotal</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="MeetAndGreetCharges">
+          <DataField>MeetAndGreetCharges</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="OrderNo">
+          <DataField>OrderNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ParkingCharges">
+          <DataField>ParkingCharges</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Passenger">
+          <DataField>Passenger</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PickupDate">
+          <DataField>PickupDate</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="PupilNo">
+          <DataField>PupilNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ToAddress">
+          <DataField>ToAddress</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TotalCharges">
+          <DataField>TotalCharges</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="TotalInvoiceAmount">
+          <DataField>TotalInvoiceAmount</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="VAT20">
+          <DataField>VAT20</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="VehicleType">
+          <DataField>VehicleType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="WaitingCharges">
+          <DataField>WaitingCharges</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="CostCenterId">
+          <DataField>CostCenterId</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="CostCenterName">
+          <DataField>CostCenterName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CostCenterWise">
+          <DataField>CostCenterWise</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="BookedBy">
+          <DataField>BookedBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BookingTypeId">
+          <DataField>BookingTypeId</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="HasBookedBy">
+          <DataField>HasBookedBy</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="RemovalCode">
+          <DataField>RemovalCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RemovalDescription">
+          <DataField>RemovalDescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DueDate">
+          <DataField>DueDate</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="ProviderName">
+          <DataField>ProviderName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SpecialInstruction">
+          <DataField>SpecialInstruction</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BookingDepartmentId">
+          <DataField>BookingDepartmentId</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Int64, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="BookingDepartmentName">
+          <DataField>BookingDepartmentName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EscortAddress">
+          <DataField>EscortAddress</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EscortId">
+          <DataField>EscortId</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Int64, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="EscortName">
+          <DataField>EscortName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EscortPrice">
+          <DataField>EscortPrice</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="HasSingleOrderNo">
+          <DataField>HasSingleOrderNo</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="InvoiceOrderNo">
+          <DataField>InvoiceOrderNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OrderSplit">
+          <DataField>OrderSplit</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PaymentTypeId">
+          <DataField>PaymentTypeId</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="Via1">
+          <DataField>Via1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Via2">
+          <DataField>Via2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DummyDataSource</DataSourceName>
+        <CommandText />
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Taxi_Model</rd:DataSetName>
+        <rd:TableName>vu_Invoice</rd:TableName>
+        <rd:ObjectDataSourceType>Taxi_Model.vu_Invoice, Taxi_Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="Taxi_AppMain_Classes_ClsLogo">
+      <Fields>
+        <Field Name="ImageFile">
+          <DataField>ImageFile</DataField>
+          <rd:TypeName>System.Drawing.Image</rd:TypeName>
+        </Field>
+        <Field Name="ImageInBytes">
+          <DataField>ImageInBytes</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DummyDataSource</DataSourceName>
+        <CommandText />
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Taxi_AppMain.Classes</rd:DataSetName>
+        <rd:TableName>ClsLogo</rd:TableName>
+        <rd:ObjectDataSourceType>Taxi_AppMain.Classes.ClsLogo, Taxi_AppMain, Version=2010.3.1109.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>8.49667in</Width>
+  <Body>
+    <ReportItems>
+      <List Name="list1">
+        <Sorting>
+          <SortBy>
+            <SortExpression>=Fields!InvoiceNo.Value</SortExpression>
+            <Direction>Ascending</Direction>
+          </SortBy>
+        </Sorting>
+        <Left>0.0625in</Left>
+        <DataSetName>Taxi_Model_vu_Invoice</DataSetName>
+        <KeepTogether>true</KeepTogether>
+        <ReportItems>
+          <Textbox Name="textbox42">
+            <Top>5.375in</Top>
+            <Width>2.75in</Width>
+            <Style>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontSize>8pt</FontSize>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>32</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>0.25in</Left>
+            <Height>0.17in</Height>
+            <Value>=Parameters!Report_Parameter_SortCode.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox43">
+            <Top>5.19792in</Top>
+            <Width>2.75in</Width>
+            <Style>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontSize>8pt</FontSize>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>31</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>0.24999in</Left>
+            <Height>0.17in</Height>
+            <Value>=Parameters!Report_Parameter_AccountNo.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox44">
+            <Top>5.02084in</Top>
+            <Width>2.75in</Width>
+            <Style>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontSize>8pt</FontSize>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>30</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>0.24999in</Left>
+            <Height>0.17in</Height>
+            <Value>=Parameters!Report_Parameter_Bank.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox41">
+            <Top>4.84375in</Top>
+            <Width>2.75in</Width>
+            <Style>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontSize>8pt</FontSize>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>29</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>0.25in</Left>
+            <Height>0.17in</Height>
+            <Value>Please make Bacs payments to:</Value>
+          </Textbox>
+          <Textbox Name="textbox33">
+            <Visibility>
+              <Hidden>=IIF(Parameters!Report_Parameter_HasVat.Value=1,False, True)</Hidden>
+            </Visibility>
+            <Top>11.11111cm</Top>
+            <Width>1.125in</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontSize>9pt</FontSize>
+              <FontWeight>700</FontWeight>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>28</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>7.25in</Left>
+            <Height>0.25in</Height>
+            <Value>="£ "&amp;FormatNumber(Parameters!Report_Parameter_VAT.Value,2)</Value>
+          </Textbox>
+          <Textbox Name="textbox35">
+            <Visibility>
+              <Hidden>=IIF(Parameters!Report_Parameter_HasVat.Value=1,False, True)</Hidden>
+            </Visibility>
+            <Top>11.11111cm</Top>
+            <Width>1.125in</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontSize>9pt</FontSize>
+              <FontWeight>700</FontWeight>
+              <TextAlign>Right</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>27</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>6in</Left>
+            <Height>0.25in</Height>
+            <Value>VAT:</Value>
+          </Textbox>
+          <Textbox Name="textbox32">
+            <Top>5.55208in</Top>
+            <Width>2.75in</Width>
+            <Style>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontSize>8pt</FontSize>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>26</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>0.24999in</Left>
+            <Height>0.17in</Height>
+            <Value>Kind Regards</Value>
+          </Textbox>
+          <Textbox Name="textbox30">
+            <Top>4.66666in</Top>
+            <Width>2.75in</Width>
+            <Style>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontSize>8pt</FontSize>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>25</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>0.24999in</Left>
+            <Height>0.17in</Height>
+            <Value>="Thank you for using "&amp;Parameters!Report_Parameter_CompanyHeader.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox20">
+            <Top>4.48958in</Top>
+            <Width>2.75in</Width>
+            <Style>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontSize>8pt</FontSize>
+              <FontWeight>700</FontWeight>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>24</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>0.24999in</Left>
+            <Height>0.17in</Height>
+            <Value>Comments:</Value>
+          </Textbox>
+          <Textbox Name="textbox6">
+            <rd:DefaultName>textbox6</rd:DefaultName>
+            <Top>4.125in</Top>
+            <Width>2.75in</Width>
+            <Style>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontSize>8pt</FontSize>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>23</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>0.24999in</Left>
+            <Height>0.25in</Height>
+            <Value>="Terms of trading are " +Parameters!Report_Parameter_Path.Value+ " days"</Value>
+          </Textbox>
+          <Textbox Name="textbox27">
+            <Top>11.74603cm</Top>
+            <Width>1.125in</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontSize>9pt</FontSize>
+              <FontWeight>700</FontWeight>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>22</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>7.25in</Left>
+            <Height>0.25in</Height>
+            <Value>="£ "&amp;FormatNumber(Parameters!Report_Parameter_InvoiceTotal.Value,2)</Value>
+          </Textbox>
+          <Textbox Name="textbox28">
+            <Top>10.47619cm</Top>
+            <Width>1.125in</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontSize>9pt</FontSize>
+              <FontWeight>700</FontWeight>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>21</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>7.25in</Left>
+            <Height>0.25in</Height>
+            <Value>="£"&amp;FormatNumber(Sum((Fields!Charges.Value +Fields!ParkingCharges.Value + Fields!WaitingCharges.Value )),2)</Value>
+          </Textbox>
+          <Textbox Name="textbox25">
+            <Top>11.74603cm</Top>
+            <Width>1.125in</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontSize>9pt</FontSize>
+              <FontWeight>700</FontWeight>
+              <TextAlign>Right</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>20</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>6in</Left>
+            <Height>0.25in</Height>
+            <Value>Overall Total:</Value>
+          </Textbox>
+          <Textbox Name="textbox26">
+            <Top>10.47619cm</Top>
+            <Width>1.125in</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontSize>9pt</FontSize>
+              <FontWeight>700</FontWeight>
+              <TextAlign>Right</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>19</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>6in</Left>
+            <Height>0.25in</Height>
+            <Value>Sub total:</Value>
+          </Textbox>
+          <Textbox Name="textbox17">
+            <Top>1.125in</Top>
+            <Width>2.875in</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontFamily>Times New Roman</FontFamily>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>18</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>5.05208in</Left>
+            <Height>0.25in</Height>
+            <Value>=Parameters!Report_Parameter_Website.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox22">
+            <Top>1.125in</Top>
+            <Width>0.68in</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontWeight>700</FontWeight>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>17</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>4.375in</Left>
+            <Height>0.25in</Height>
+            <Value>Web site:</Value>
+          </Textbox>
+          <Textbox Name="textbox15">
+            <Top>1.125in</Top>
+            <Width>1.61in</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontFamily>Times New Roman</FontFamily>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>16</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>2.76042in</Left>
+            <Height>0.25in</Height>
+            <Value>=Parameters!Report_Parameter_Email.Value+","</Value>
+          </Textbox>
+          <Textbox Name="textbox16">
+            <Top>1.125in</Top>
+            <Width>0.625in</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontWeight>700</FontWeight>
+              <TextAlign>Right</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>15</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>2.13542in</Left>
+            <Height>0.25in</Height>
+            <Value>E~mail:</Value>
+          </Textbox>
+          <Textbox Name="textbox13">
+            <Top>0.875in</Top>
+            <Width>1.8125in</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontFamily>Times New Roman</FontFamily>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>14</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>4.13542in</Left>
+            <Height>0.25in</Height>
+            <Value>=Parameters!Report_Parameter_EmergencyNo.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox12">
+            <Top>0.625in</Top>
+            <Width>5.1875in</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontSize>11pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>13</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>3.0625in</Left>
+            <Height>0.25in</Height>
+            <Value>=Parameters!Report_Parameter_Address.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox11">
+            <Top>2.5in</Top>
+            <Width>1.25in</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontSize>9pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>12</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>7.125in</Left>
+            <Height>0.63492cm</Height>
+            <Value>=Parameters!Report_Parameter_VATNumber.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox10">
+            <Top>6.34921cm</Top>
+            <Width>1.375in</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontSize>9pt</FontSize>
+              <FontWeight>700</FontWeight>
+              <TextAlign>Right</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>11</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>5.75in</Left>
+            <Height>0.25in</Height>
+            <Value>VAT number:</Value>
+          </Textbox>
+          <Textbox Name="textbox3">
+            <Top>5.71429cm</Top>
+            <Width>1.375in</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontSize>9pt</FontSize>
+              <FontWeight>700</FontWeight>
+              <TextAlign>Right</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>10</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>5.75in</Left>
+            <Height>0.25in</Height>
+            <Value>Invoice Number:</Value>
+          </Textbox>
+          <Textbox Name="textbox50">
+            <Top>0.625in</Top>
+            <Width>2.30208in</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontSize>11pt</FontSize>
+              <FontWeight>700</FontWeight>
+              <TextAlign>Right</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>9</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>0.76042in</Left>
+            <Height>0.25in</Height>
+            <Value>=Parameters!Report_Parameter_CompanyHeader.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox19">
+            <Top>0.875in</Top>
+            <Width>1.01042in</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontFamily>Times New Roman</FontFamily>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>8</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>3.11458in</Left>
+            <Height>0.25in</Height>
+            <Value>=Parameters!Report_Parameter_Telephone.Value+","</Value>
+          </Textbox>
+          <Textbox Name="textbox29">
+            <rd:DefaultName>textbox29</rd:DefaultName>
+            <Top>0.875in</Top>
+            <Width>0.72917in</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontWeight>700</FontWeight>
+              <TextAlign>Right</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>7</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>2.38541in</Left>
+            <Height>0.25in</Height>
+            <Value>Tel No.</Value>
+          </Textbox>
+          <Textbox Name="textbox1">
+            <rd:DefaultName>textbox1</rd:DefaultName>
+            <Top>0.125in</Top>
+            <Width>1.5in</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontFamily>tahoma</FontFamily>
+              <FontSize>20pt</FontSize>
+              <FontWeight>700</FontWeight>
+              <TextAlign>Center</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>6</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>3.4375in</Left>
+            <Height>0.375in</Height>
+            <Value>Invoice</Value>
+          </Textbox>
+          <Table Name="table1">
+            <ZIndex>5</ZIndex>
+            <DataSetName>Taxi_Model_vu_CompanyInvoice</DataSetName>
+            <KeepTogether>true</KeepTogether>
+            <Top>3.125in</Top>
+            <Details>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="PickupDate">
+                          <rd:DefaultName>PickupDate</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <BorderColor>
+                              <Left>Black</Left>
+                              <Right>Black</Right>
+                              <Top>Black</Top>
+                              <Bottom>Black</Bottom>
+                            </BorderColor>
+                            <BorderWidth>
+                              <Left>1pt</Left>
+                              <Right>1pt</Right>
+                              <Top>1pt</Top>
+                              <Bottom>1pt</Bottom>
+                            </BorderWidth>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>14</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=iif(IsNothing(Fields!PickupDate.Value),"", Format(Fields!PickupDate.Value,"MM/yy HH:mm") )</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="BookingNo">
+                          <rd:DefaultName>BookingNo</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <BorderColor>
+                              <Left>Black</Left>
+                              <Right>Black</Right>
+                              <Top>Black</Top>
+                              <Bottom>Black</Bottom>
+                            </BorderColor>
+                            <BorderWidth>
+                              <Left>1pt</Left>
+                              <Right>1pt</Right>
+                              <Top>1pt</Top>
+                              <Bottom>1pt</Bottom>
+                            </BorderWidth>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>13</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!BookingNo.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="OrderNo">
+                          <rd:DefaultName>OrderNo</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <BorderColor>
+                              <Left>Black</Left>
+                              <Right>Black</Right>
+                              <Top>Black</Top>
+                              <Bottom>Black</Bottom>
+                            </BorderColor>
+                            <BorderWidth>
+                              <Left>1pt</Left>
+                              <Right>1pt</Right>
+                              <Top>1pt</Top>
+                              <Bottom>1pt</Bottom>
+                            </BorderWidth>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!OrderNo.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="VehicleType">
+                          <rd:DefaultName>VehicleType</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <BorderColor>
+                              <Left>Black</Left>
+                              <Right>Black</Right>
+                              <Top>Black</Top>
+                              <Bottom>Black</Bottom>
+                            </BorderColor>
+                            <BorderWidth>
+                              <Left>1pt</Left>
+                              <Right>1pt</Right>
+                              <Top>1pt</Top>
+                              <Bottom>1pt</Bottom>
+                            </BorderWidth>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>10</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!VehicleType.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="Passenger">
+                          <rd:DefaultName>Passenger</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <BorderColor>
+                              <Left>Black</Left>
+                              <Right>Black</Right>
+                              <Top>Black</Top>
+                              <Bottom>Black</Bottom>
+                            </BorderColor>
+                            <BorderWidth>
+                              <Left>1pt</Left>
+                              <Right>1pt</Right>
+                              <Top>1pt</Top>
+                              <Bottom>1pt</Bottom>
+                            </BorderWidth>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>9</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!Passenger.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="FromAddress">
+                          <rd:DefaultName>FromAddress</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <BorderColor>
+                              <Left>Black</Left>
+                              <Right>Black</Right>
+                              <Top>Black</Top>
+                              <Bottom>Black</Bottom>
+                            </BorderColor>
+                            <BorderWidth>
+                              <Left>1pt</Left>
+                              <Right>1pt</Right>
+                              <Top>1pt</Top>
+                              <Bottom>1pt</Bottom>
+                            </BorderWidth>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>8</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!FromAddress.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="Via2">
+                          <rd:DefaultName>Via2</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <BorderColor>
+                              <Left>Black</Left>
+                              <Right>Black</Right>
+                              <Top>Black</Top>
+                              <Bottom>Black</Bottom>
+                            </BorderColor>
+                            <BorderWidth>
+                              <Left>1pt</Left>
+                              <Right>1pt</Right>
+                              <Top>1pt</Top>
+                              <Bottom>1pt</Bottom>
+                            </BorderWidth>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=IIf( ISNothing(Fields!Via1.Value),"",Fields!Via1.Value)</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="ToAddress">
+                          <rd:DefaultName>ToAddress</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <BorderColor>
+                              <Left>Black</Left>
+                              <Right>Black</Right>
+                              <Top>Black</Top>
+                              <Bottom>Black</Bottom>
+                            </BorderColor>
+                            <BorderWidth>
+                              <Left>1pt</Left>
+                              <Right>1pt</Right>
+                              <Top>1pt</Top>
+                              <Bottom>1pt</Bottom>
+                            </BorderWidth>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>7</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!ToAddress.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="Charges">
+                          <rd:DefaultName>Charges</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <BorderColor>
+                              <Left>Black</Left>
+                              <Right>Black</Right>
+                              <Top>Black</Top>
+                              <Bottom>Black</Bottom>
+                            </BorderColor>
+                            <BorderWidth>
+                              <Left>1pt</Left>
+                              <Right>1pt</Right>
+                              <Top>1pt</Top>
+                              <Bottom>1pt</Bottom>
+                            </BorderWidth>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>6</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>=iif(IsNothing(Fields!PickupDate.Value),"","£"&amp; FormatNumber(Fields!Charges.Value,2))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="ParkingCharges_1">
+                          <rd:DefaultName>ParkingCharges_1</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <BorderColor>
+                              <Left>Black</Left>
+                              <Right>Black</Right>
+                              <Top>Black</Top>
+                              <Bottom>Black</Bottom>
+                            </BorderColor>
+                            <BorderWidth>
+                              <Left>1pt</Left>
+                              <Right>1pt</Right>
+                              <Top>1pt</Top>
+                              <Bottom>1pt</Bottom>
+                            </BorderWidth>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=iif(IsNothing(Fields!PickupDate.Value),"","£"&amp; FormatNumber(Fields!ParkingCharges.Value,2))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ColSpan>3</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="WaitingCharges">
+                          <rd:DefaultName>WaitingCharges</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <BorderColor>
+                              <Left>Black</Left>
+                              <Right>Black</Right>
+                              <Top>Black</Top>
+                              <Bottom>Black</Bottom>
+                            </BorderColor>
+                            <BorderWidth>
+                              <Left>1pt</Left>
+                              <Right>1pt</Right>
+                              <Top>1pt</Top>
+                              <Bottom>1pt</Bottom>
+                            </BorderWidth>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=iif(IsNothing(Fields!PickupDate.Value),"", "£"&amp;FormatNumber(Fields!WaitingCharges.Value,2))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="TotalCharges">
+                          <rd:DefaultName>TotalCharges</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <BorderColor>
+                              <Left>Black</Left>
+                              <Right>Black</Right>
+                              <Top>Black</Top>
+                              <Bottom>Black</Bottom>
+                            </BorderColor>
+                            <BorderWidth>
+                              <Left>1pt</Left>
+                              <Right>1pt</Right>
+                              <Top>1pt</Top>
+                              <Bottom>1pt</Bottom>
+                            </BorderWidth>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=iif(IsNothing(Fields!PickupDate.Value),"", "£"&amp;FormatNumber( (Fields!Charges.Value +Fields!ParkingCharges.Value + Fields!WaitingCharges.Value ),2))</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.29167in</Height>
+                </TableRow>
+              </TableRows>
+            </Details>
+            <Style>
+              <BorderColor>
+                <Bottom>Black</Bottom>
+              </BorderColor>
+              <FontFamily>Tahoma</FontFamily>
+              <FontSize>11pt</FontSize>
+            </Style>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox2">
+                          <rd:DefaultName>textbox2</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>44</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>Date/Time</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox34">
+                          <rd:DefaultName>textbox34</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>43</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>Job No.</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox9">
+                          <rd:DefaultName>textbox9</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>Order</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox36">
+                          <rd:DefaultName>textbox36</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>40</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>Vehicle</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox37">
+                          <rd:DefaultName>textbox37</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>39</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>Name</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox38">
+                          <rd:DefaultName>textbox38</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>38</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>From</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox7">
+                          <rd:DefaultName>textbox7</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>Via</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox39">
+                          <rd:DefaultName>textbox39</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>37</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>To</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox18">
+                          <rd:DefaultName>textbox18</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>36</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>Charge</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox40">
+                          <rd:DefaultName>textbox40</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>Parking</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ColSpan>3</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="textbox4">
+                          <rd:DefaultName>textbox4</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>Waiting</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox21">
+                          <rd:DefaultName>textbox21</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>White</BackgroundColor>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>700</FontWeight>
+                            <TextAlign>Left</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <ZIndex>30</ZIndex>
+                          <CanGrow>true</CanGrow>
+                          <Value>Total</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.3in</Height>
+                </TableRow>
+              </TableRows>
+              <RepeatOnNewPage>true</RepeatOnNewPage>
+            </Header>
+            <TableColumns>
+              <TableColumn>
+                <Width>0.8in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.625in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.45in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.5in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.625in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.25in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.625in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>1.25in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.6in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.56in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.125in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.125in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.28in</Width>
+              </TableColumn>
+              <TableColumn>
+                <Width>0.6in</Width>
+              </TableColumn>
+            </TableColumns>
+            <Height>0.59167in</Height>
+          </Table>
+          <Textbox Name="InvoiceNo_1">
+            <rd:DefaultName>InvoiceNo_1</rd:DefaultName>
+            <Top>2.25in</Top>
+            <Width>1.25in</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontSize>9pt</FontSize>
+              <TextAlign>Left</TextAlign>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>4</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>7.125in</Left>
+            <Height>0.63492cm</Height>
+            <Value>=Fields!InvoiceNo.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox23">
+            <Top>5.07937cm</Top>
+            <Width>1.375in</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontSize>9pt</FontSize>
+              <FontWeight>700</FontWeight>
+              <TextAlign>Right</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>3</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>5.75in</Left>
+            <Height>0.25in</Height>
+            <Value>Invoice Date:</Value>
+          </Textbox>
+          <Textbox Name="textbox24">
+            <Top>2in</Top>
+            <Width>1.25in</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontFamily>Times New Roman</FontFamily>
+              <FontSize>9pt</FontSize>
+              <Format>dd/MM/yyyy</Format>
+              <TextAlign>Left</TextAlign>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>2</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>7.125in</Left>
+            <Height>0.63492cm</Height>
+            <Value>=iif(IsNothing(Fields!InvoiceDate.Value),"", Format(Fields!InvoiceDate.Value,"dd/MM/yyyy") )</Value>
+          </Textbox>
+          <Textbox Name="CompanyName_1">
+            <rd:DefaultName>CompanyName_1</rd:DefaultName>
+            <Top>2in</Top>
+            <Width>6.98413cm</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontStyle>Italic</FontStyle>
+              <FontFamily>Times New Roman</FontFamily>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>1</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>1in</Left>
+            <Height>0.25in</Height>
+            <Value>=First(Fields!CompanyName.Value)</Value>
+          </Textbox>
+          <Textbox Name="CompanyAddress">
+            <rd:DefaultName>CompanyAddress</rd:DefaultName>
+            <Top>2.25in</Top>
+            <Width>6.98413cm</Width>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <FontStyle>Italic</FontStyle>
+              <FontFamily>Times New Roman</FontFamily>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Left>1in</Left>
+            <Height>0.6in</Height>
+            <Value>=First(Fields!CompanyAddress.Value)</Value>
+          </Textbox>
+        </ReportItems>
+        <Top>0.11458in</Top>
+        <Width>8.415in</Width>
+        <Style>
+          <BackgroundColor>White</BackgroundColor>
+          <BorderColor>
+            <Default>White</Default>
+          </BorderColor>
+        </Style>
+        <Grouping Name="list1_Details_Group">
+          <GroupExpressions>
+            <GroupExpression>=Fields!Id.Value</GroupExpression>
+          </GroupExpressions>
+          <PageBreakAtEnd>true</PageBreakAtEnd>
+        </Grouping>
+        <Height>6.63542in</Height>
+      </List>
+    </ReportItems>
+    <Height>10.5in</Height>
+    <Style>
+      <BackgroundColor>White</BackgroundColor>
+    </Style>
+  </Body>
+  <DataElementStyle>ElementNormal</DataElementStyle>
+  <PageFooter>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox5">
+        <rd:DefaultName>textbox5</rd:DefaultName>
+        <Top>0.31746cm</Top>
+        <Width>2.53968cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Left>18.73016cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>="Page " &amp; Globals!PageNumber</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.5in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageFooter>
+  <TopMargin>0.1in</TopMargin>
+</Report>

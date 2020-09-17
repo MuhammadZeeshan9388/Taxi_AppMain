@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<App>
+  <Module Text="General" ImageKey="Pic_General">
+
+
+    <Form Text="Zones" Key="frmZones" ImageKey=""></Form>
+    <Form Text="Locations" Key="frmLocations" ImageKey=""></Form>
+
+    <Form Text="Company" Key="frmCompany" ImageKey=""></Form>
+    <Form Text="System Policy" Key="frmSysPolicy" ImageKey=""></Form>
+
+  </Module>
+
+  <Module Text="Fares" ImageKey="pic_Fares" Key="frmFaresList" >
+    <Form Text="New Fare" Key="frmFares" ImageKey="" ShowDialog="True"></Form>
+    <Form Text="Fares List" Key="frmFaresList" ImageKey="" ></Form>
+  </Module>
+  
+  
+  <Module Text="Customers" ImageKey="pic_Customer2" Key="frmCustomersList" >
+    <Form Text="New Customer" Key="frmCustomer" ImageKey="" ShowDialog="True"></Form>
+    <Form Text="Customers List" Key="frmCustomersList" ImageKey=""></Form>
+  </Module>
+
+  
+  <Module Text="Drivers" ImageKey="pic_Driver2" Key="frmDriversList" >
+    <Form Text="New Driver" Key="frmDriver" ImageKey="" ShowDialog="True"></Form>
+    <Form Text="Drivers List" Key="frmDriversList" ImageKey=""></Form>
+
+  </Module>
+
+  <Module Text="Vehicles" ImageKey="pic_Vehicle" Key="frmVehicleTypeList" >
+
+    <Form Text="Vehicle Type" Key="frmVehicleType" ImageKey="" ShowDialog="True"></Form>
+    <Form Text="Vehicle Types List" Key="frmVehicleTypeList" ImageKey=""></Form>
+
+
+    <!-- <Form Text="Specifications" Key="frmSpecsData" ImageKey=""></Form>
+    <Form Text="New Vehicle" Key="frmVehicle" ImageKey="" ShowDialog="True"></Form>
+    <Form Text="Vehicles List" Key="frmVehiclesList" ImageKey=""></Form>-->
+
+  </Module>
+
+  <Module Text="Bookings" ImageKey="pic_Booking2" Key="frmBookingsList">
+ 
+    <Form Text="New Booking" Key="frmBooking" ImageKey="" ShowDialog="True"></Form>
+    <Form Text="Bookings List" Key="frmBookingsList" ImageKey=""></Form>
+
+  </Module>
+
+
+  <!--<Module Text="Finance" ImageKey="pic_Finance" Key="">
+
+    <Form Text="New Invoice" Key="frmInvoice" ImageKey="" ShowDialog="True"></Form>
+    <Form Text="Invoice List" Key="frmInvoiceList" ImageKey=""></Form>
+
+  </Module>
+
+  <Module Text="Search" ImageKey="pic_Search" Key="">
+
+    <Form Text="Advanced Search" Key="frmAdvancedSearch" ImageKey="" ></Form>
+    <Form Text="Search Customer" Key="frmSearchCustomer" ImageKey=""></Form>
+    <Form Text="Search Driver"   Key="frmSearchCustomer" ImageKey=""></Form>
+    <Form Text="Search Vehicle" Key="frmSearchCustomer" ImageKey=""></Form>
+    <Form Text="Search Booking" Key="frmSearchCustomer" ImageKey=""></Form>
+    <Form Text="Search Invoice" Key="frmSearchCustomer" ImageKey=""></Form>
+
+  </Module>-->
+
+ 
+
+  <Module Text="User Management" ImageKey="pic_UserM" Key="frmSecGroupAuthorities" >
+
+      <Form Text="User" Key="frmUsers" ImageKey=""></Form>
+      <Form Text="Group Authorities" Key="frmSecGroupAuthorities" ImageKey=""></Form>
+  </Module>
+
+
+
+</App>
+
+

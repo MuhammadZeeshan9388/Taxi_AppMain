@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/14/2020 16:11:36" ReportInfo.Modified="09/14/2020 16:20:32" ReportInfo.CreatorVersion="2020.2.6.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqaqIfsaYp2+3HQ+X3yFr5ooZdW+Qr1e73UlxWrOCfx/Qna09PbcznntUwb5CoOeFdJ+gnwRxKg1H0r4b0wYKxDF4SYzCx8m8D0Qw0IUNzWhWNK5BKQuq1J43x0efpMYWOlzb9qHw1v6o11RfSJFB4/nTgws0ykmqaHqYPOhftosenX0jymJP1/27zI/me31vQcqPZTEPQp55HVMIfm3sbCQ==">
+      <TableDataSource Name="CallHistory" DataType="System.Int32" Enabled="true" TableName="CallHistory">
+        <Column Name="Id" DataType="System.Int64"/>
+        <Column Name="Name" DataType="System.String"/>
+        <Column Name="PhoneNumber" DataType="System.String"/>
+        <Column Name="CallDateTime" DataType="System.DateTime"/>
+        <Column Name="CallDuration" DataType="System.String"/>
+        <Column Name="IsAccepted" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="Line" DataType="System.String"/>
+        <Column Name="STN" DataType="System.String"/>
+        <Column Name="Sno" DataType="System.Int32"/>
+        <Column Name="AnsweredDateTime" DataType="System.DateTime"/>
+        <Column Name="ControllerId" DataType="System.Int32"/>
+        <Column Name="CalledToNumber" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Parameter Name="ReportHeader" DataType="System.String"/>
+    <Parameter Name="ReportAddress" DataType="System.String"/>
+    <Parameter Name="Telephone" DataType="System.String"/>
+    <Parameter Name="Criteria" DataType="System.String"/>
+    <Parameter Name="TotalCalls" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" LeftMargin="12.7" TopMargin="5.08" RightMargin="12.7" BottomMargin="12.7" Watermark.Font="Arial, 60pt">
+    <PageHeaderBand Name="PageHeader1" Width="697.79" Height="141.75">
+      <TextObject Name="textbox7" Left="534.9" Top="9.45" Width="156" Height="36" CanGrow="true" Text="Call History" Padding="2, 2, 2, 2" Font="Arial, 16pt, style=Bold"/>
+      <TextObject Name="textbox25" Left="382.95" Top="102.9" Width="132" Height="24" CanGrow="true" Text="Total Calls :" Padding="2, 2, 2, 2" Font="Arial, 11pt, style=Bold"/>
+      <TextObject Name="Text1" Left="133.35" Top="4.55" Width="340.2" Height="28.35" Text="[ReportHeader]" HorzAlign="Center" VertAlign="Center" Font="Arial, 14pt"/>
+      <TextObject Name="Text2" Left="97" Top="45" Width="406.35" Height="18.9" Text="[ReportAddress]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text3" Left="76" Top="73" Width="444.15" Height="18.9" Text="[Telephone]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text4" Left="534" Top="53" Width="160.65" Height="18.9" Text="[Criteria]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text5" Left="530" Top="102" Width="160.65" Height="28.35" Text="[TotalCalls]" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="169.1" Width="697.79" Height="18.9" CanGrow="true" CanShrink="true" CanBreak="true" DataSource="CallHistory">
+      <TableObject Name="Table3" Left="9.45" Width="670.95" Height="18.9" Border.Lines="All">
+        <TableColumn Name="Column11" Width="134.19"/>
+        <TableColumn Name="Column12" Width="134.19"/>
+        <TableColumn Name="Column13" Width="134.19"/>
+        <TableColumn Name="Column14" Width="134.19"/>
+        <TableColumn Name="Column15" Width="134.19"/>
+        <TableRow Name="Row5" AutoSize="true">
+          <TableCell Name="Cell21" Border.Lines="Right" Text="[CallHistory.Name]" Font="Arial, 10pt"/>
+          <TableCell Name="Cell22" Border.Lines="Right" Text="[CallHistory.PhoneNumber]" Font="Arial, 10pt"/>
+          <TableCell Name="Cell23" Border.Lines="Right" Text="[FormatDateTime([CallHistory.CallDateTime],&quot;dd-MMM-yy HH:mm:ss&quot;)]" Font="Arial, 10pt"/>
+          <TableCell Name="Cell24" Border.Lines="Right" Text="[CallHistory.Line]" Font="Arial, 10pt"/>
+          <TableCell Name="Cell25" Text="[CallHistory.STN]" Font="Arial, 10pt"/>
+        </TableRow>
+      </TableObject>
+      <DataHeaderBand Name="DataHeader1" Top="145.75" Width="697.79" Height="19.35" CanGrow="true" CanShrink="true" CanBreak="true">
+        <TableObject Name="Table2" Left="9.45" Top="0.45" Width="670.95" Height="18.9" Border.Lines="All">
+          <TableColumn Name="Column6" Width="134.19"/>
+          <TableColumn Name="Column7" Width="134.19"/>
+          <TableColumn Name="Column8" Width="134.19"/>
+          <TableColumn Name="Column9" Width="134.19"/>
+          <TableColumn Name="Column10" Width="134.19"/>
+          <TableRow Name="Row4">
+            <TableCell Name="Cell16" Border.Lines="Right" Text="Name" Font="Arial, 10pt"/>
+            <TableCell Name="Cell17" Border.Lines="Right" Text="Number" Font="Arial, 10pt"/>
+            <TableCell Name="Cell18" Border.Lines="Right" Text="Call Date Time" Font="Arial, 10pt"/>
+            <TableCell Name="Cell19" Border.Lines="Right" Text="Line" Font="Arial, 10pt"/>
+            <TableCell Name="Cell20" Text="STN" Font="Arial, 10pt"/>
+          </TableRow>
+        </TableObject>
+      </DataHeaderBand>
+    </DataBand>
+  </ReportPage>
+</Report>

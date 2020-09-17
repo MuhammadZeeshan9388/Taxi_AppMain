@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="SysGenSetting789CommandTab" Class="LicDataContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=88.208.245.219,58526;Initial Catalog=SysGenSetting789CommandTab;User ID=AB125/!#^DnymaicPoliTabExpCondition" SettingsObjectName="Taxi_AppMain.Properties.Settings" SettingsPropertyName="SysGenSetting789CommandTabConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SytemGenePolicyTabsConditions758" Member="SytemGenePolicyTabsConditions758s">
+    <Type Name="SytemGenePolicyTabsConditions758">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ConditionTabPolicy" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="SystemLoadBalance" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ConditionType" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ScriptBaseForm" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ScriptType" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ConditionApplyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastCondition" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FullFormConditionTabPolicyApply" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.stp_SysPolicyAuth" Method="stp_SysPolicyAuth">
+    <Parameter Name="ClientName" Parameter="clientName" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="stp_SysPolicyAuthResult">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="ConditionTabPolicy" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="SystemLoadBalance" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ConditionType" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ScriptBaseForm" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ConditionApplyDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ScriptType" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="LastCondition" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FullFormConditionTabPolicyApply" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

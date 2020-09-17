@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestLists xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestList name="Lists of Tests" id="8c43106b-9dc1-4907-a29f-aa66a61bf5b6" />
+  <TestList name="Test1" id="9aca0361-43e3-40e4-b2d3-102921c27a91" parentListId="8c43106b-9dc1-4907-a29f-aa66a61bf5b6">
+    <Description>s</Description>
+  </TestList>
+</TestLists>

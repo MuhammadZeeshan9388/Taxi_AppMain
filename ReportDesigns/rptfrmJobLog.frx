@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="08/06/2020 20:19:47" ReportInfo.Modified="09/07/2020 17:05:16" ReportInfo.CreatorVersion="2020.2.6.0">
+  <Styles Name="Standard">
+    <Style Name="Title" Font="Arial, 12pt, style=Bold"/>
+    <Style Name="Header" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Group" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Data" Font="Arial, 10pt"/>
+    <Style Name="Footer" Font="Arial, 10pt"/>
+    <Style Name="EvenRows" Fill.Color="WhiteSmoke" Font="Arial, 10pt"/>
+  </Styles>
+  <Dictionary>
+    <MsSqlDataConnection Name="BookingUpdate" ConnectionString="rijcmlqaqIfsaYp2+3HQ+X3yFr5ooZdW+Qr1e73UlxWrOCfx/Qna09PbcznntUwb5CoOeFdJ+gnwRxKg1H0r4b0wYKxDF4SYzCx8m8D0Qw0IUNzWhWNK5BKQuq1J43x0efpMYWOlzb9qHw1v6o11RfSJFB4/nTgws0ykmqaHqYPOhftosenX0jymJP1/27zI/me31vQkQ/4nvRE06RtrPnIcHzJUA==">
+      <TableDataSource Name="vw_BookingUpdates" DataType="System.Int32" Enabled="true" TableName="vw_BookingUpdates">
+        <Column Name="BookingNo" DataType="System.String"/>
+        <Column Name="BookingId" DataType="System.Int64"/>
+        <Column Name="User" DataType="System.String"/>
+        <Column Name="BeforeUpdate" DataType="System.String"/>
+        <Column Name="AfterUpdate" DataType="System.String"/>
+        <Column Name="UpdateDate" DataType="System.DateTime"/>
+        <Column Name="ActionType" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <MsSqlDataConnection Name="BookingLogs" ConnectionString="rijcmlqaqIfsaYp2+3HQ+X3yFr5ooZdW+Qr1e73UlxWrOCfx/Qna09PbcznntUwb5CoOeFdJ+gnwRxKg1H0r4b0wYKxDF4SYzCx8m8D0Qw0IUNzWhWNK5BKQuq1J43x0efpMYWOlzb9qHw1v6o11RfSJFB4/nTgws0ykmqaHqYPOhftosenX0jymJP1/27zI/me31vQBZt+GcRugr4LbnZmP/9i1g==">
+      <TableDataSource Name="Vu_BookingLog1" DataType="System.Int32" Enabled="true" TableName="Vu_BookingLog">
+        <Column Name="Id" DataType="System.Int64"/>
+        <Column Name="BookingNo" DataType="System.String"/>
+        <Column Name="BookingDate" DataType="System.DateTime"/>
+        <Column Name="CompanyId" DataType="System.Int32"/>
+        <Column Name="CompanyName" DataType="System.String"/>
+        <Column Name="CompanyCode" DataType="System.String"/>
+        <Column Name="AccountTypeId" DataType="System.Int32"/>
+        <Column Name="BookingTypeId" DataType="System.Int32"/>
+        <Column Name="VehicleTypeId" DataType="System.Int32"/>
+        <Column Name="VehicleType" DataType="System.String"/>
+        <Column Name="FromLocType" DataType="System.Int32"/>
+        <Column Name="ToLocType" DataType="System.Int32"/>
+        <Column Name="CustomerName" DataType="System.String"/>
+        <Column Name="CustomerMobileNo" DataType="System.String"/>
+        <Column Name="CustomerPhoneNo" DataType="System.String"/>
+        <Column Name="PickupDateTime" DataType="System.DateTime"/>
+        <Column Name="ReturnPickupDateTime" DataType="System.DateTime"/>
+        <Column Name="ReturnFareRate" DataType="System.Decimal"/>
+        <Column Name="FromAddress" DataType="System.String"/>
+        <Column Name="ToAddress" DataType="System.String"/>
+        <Column Name="FromDoorNo" DataType="System.String"/>
+        <Column Name="ToDoorNo" DataType="System.String"/>
+        <Column Name="FareRate" DataType="System.Decimal"/>
+        <Column Name="ParkingCharges" DataType="System.Decimal"/>
+        <Column Name="WaitingCharges" DataType="System.Decimal"/>
+        <Column Name="ExtraDropCharges" DataType="System.Decimal"/>
+        <Column Name="MeetAndGreetCharges" DataType="System.Decimal"/>
+        <Column Name="CongtionCharges" DataType="System.Decimal"/>
+        <Column Name="TotalCharges" DataType="System.Decimal"/>
+        <Column Name="BookingStatusId" DataType="System.Int32"/>
+        <Column Name="StatusName" DataType="System.String"/>
+        <Column Name="PaymentType" DataType="System.String"/>
+        <Column Name="PaymentTypeId" DataType="System.Int32"/>
+        <Column Name="DriverId" DataType="System.Int32"/>
+        <Column Name="DriverNo" DataType="System.String"/>
+        <Column Name="DriverFullName" DataType="System.String"/>
+        <Column Name="DriverName" DataType="System.String"/>
+        <Column Name="DriverAddress" DataType="System.String"/>
+        <Column Name="ReturnDriverId" DataType="System.Int32"/>
+        <Column Name="ReturnDriverFullName" DataType="System.String"/>
+        <Column Name="SpecialRequirements" DataType="System.String"/>
+        <Column Name="FromStreet" DataType="System.String"/>
+        <Column Name="ToStreet" DataType="System.String"/>
+        <Column Name="NoofPassengers" DataType="System.Int32"/>
+        <Column Name="NoofLuggages" DataType="System.Int32"/>
+        <Column Name="NoofHandLuggages" DataType="System.Int32"/>
+        <Column Name="OrderNo" DataType="System.String"/>
+        <Column Name="PupilNo" DataType="System.String"/>
+        <Column Name="IsCommissionWise" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="DriverCommission" DataType="System.Decimal"/>
+        <Column Name="DriverCommissionType" DataType="System.String"/>
+        <Column Name="ArrivalDateTime" DataType="System.DateTime"/>
+        <Column Name="AcceptedDateTime" DataType="System.DateTime"/>
+        <Column Name="POBDateTime" DataType="System.DateTime"/>
+        <Column Name="STCDateTime" DataType="System.DateTime"/>
+        <Column Name="ClearedDateTime" DataType="System.DateTime"/>
+        <Column Name="BookingCreateDate" DataType="System.DateTime"/>
+        <Column Name="BookingUpdateDate" DataType="System.DateTime"/>
+        <Column Name="Bookingtime" DataType="System.String"/>
+        <Column Name="DespatchDateTime" DataType="System.DateTime"/>
+        <Column Name="SubCompanyId" DataType="System.Int32"/>
+        <Column Name="Despatchby" DataType="System.String"/>
+        <Column Name="BookedBy" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Parameter Name="Report_Parameter_Address" DataType="System.String"/>
+    <Parameter Name="Report_Parameter_Telephone" DataType="System.String"/>
+    <Parameter Name="Report_Parameter_Website" DataType="System.String"/>
+    <Parameter Name="Job Ref #" DataType="System.String"/>
+    <Parameter Name="Logo" DataType="System.Byte[]"/>
+    <Parameter Name="Report_Parameter_AccountNo" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="198.45">
+      <TextObject Name="Text1" Left="170.1" Top="18.9" Width="283.5" Height="37.8" Text="Audit Trail Report" HorzAlign="Center" Font="Arial, 20pt, style=Bold"/>
+      <TextObject Name="Text3" Left="484" Top="18" Width="226.8" Height="103.95" Text="[Logo]" Font="Arial, 10pt"/>
+      <TextObject Name="Text4" Left="470.55" Top="153" Width="236.25" Height="18.9" CanGrow="true" CanShrink="true" Text="[Job Ref #]" Font="Arial, 10pt"/>
+      <TextObject Name="Text5" Left="167" Top="69.55" Width="292.95" Height="18.9" CanGrow="true" CanShrink="true" Text="[Report_Parameter_Address]" HorzAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text6" Left="168" Top="95.55" Width="292.95" Height="18.9" CanGrow="true" CanShrink="true" Text="[Report_Parameter_Telephone]" HorzAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text7" Left="167" Top="120.1" Width="292.95" Height="18.9" CanGrow="true" CanShrink="true" Text="[Report_Parameter_Website]" HorzAlign="Center" Font="Arial, 10pt"/>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="263.15" Width="718.2" Height="17.9" CanGrow="true" CanShrink="true" CanBreak="true" DataSource="Vu_BookingLog1">
+      <TableObject Name="Table5" Left="9.45" Top="-1" Width="690.56" Height="18.9" Border.Lines="All">
+        <TableColumn Name="Column27" Width="112.26"/>
+        <TableColumn Name="Column28" Width="112.26"/>
+        <TableColumn Name="Column29" Width="112.26"/>
+        <TableColumn Name="Column30" Width="112.26"/>
+        <TableColumn Name="Column31" Width="112.26"/>
+        <TableColumn Name="Column32" Width="129.26"/>
+        <TableRow Name="Row22" AutoSize="true">
+          <TableCell Name="Cell127" Border.Lines="Right" Text="[FormatDateTime([Booking1.PickupDateTime],&quot;dd/MM/yyyy HH:mm&quot;)]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+          <TableCell Name="Cell128" Border.Lines="Right" Text="[Booking1.CustomerName]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+          <TableCell Name="Cell129" Border.Lines="Right" Text="[Booking1.FromAddress]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+          <TableCell Name="Cell130" Border.Lines="Right" Text="[Booking1.ToAddress]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+          <TableCell Name="Cell131" Border.Lines="Right" Text="[FormatDateTime([Booking1.BookingCreateDate],&quot;dd/MM/yyyy HH:mm&quot;)]&#13;&#10;" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+          <TableCell Name="Cell132" Text="[Booking1.BookedBy]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+        </TableRow>
+      </TableObject>
+      <DataHeaderBand Name="DataHeader4" Top="202.45" Width="718.2" Height="56.7">
+        <TableObject Name="Table4" Left="9.45" Top="36.35" Width="690.56" Height="18.9" Border.Lines="Top, Bottom">
+          <TableColumn Name="Column21" Width="112.26"/>
+          <TableColumn Name="Column22" Width="112.26"/>
+          <TableColumn Name="Column23" Width="112.26"/>
+          <TableColumn Name="Column24" Width="112.26"/>
+          <TableColumn Name="Column25" Width="112.26"/>
+          <TableColumn Name="Column26" Width="129.26"/>
+          <TableRow Name="Row21" AutoSize="true">
+            <TableCell Name="Cell101" Border.Lines="Left" Text="Job Date &amp; Time" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+            <TableCell Name="Cell102" Border.Lines="Left" Text="Customer " HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+            <TableCell Name="Cell103" Border.Lines="Left" Text="Pickup Point" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+            <TableCell Name="Cell104" Border.Lines="Left" Text="Destination" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+            <TableCell Name="Cell105" Border.Lines="Left" Text="Booked On" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+            <TableCell Name="Cell126" Border.Lines="Left, Right" Text=" Booked By" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+          </TableRow>
+        </TableObject>
+        <TextObject Name="Text10" Left="9.45" Top="14.45" Width="151.2" Height="18.9" Border.Lines="Left, Right, Top" Text="Job Details" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+      </DataHeaderBand>
+    </DataBand>
+    <DataBand Name="Data2" Top="345.75" Width="718.2" Height="18.9" CanGrow="true" CanShrink="true" CanBreak="true" DataSource="Vu_BookingLog1">
+      <TableObject Name="Table6" Left="9.45" Width="689.85" Height="18.9" Border.Lines="All">
+        <TableColumn Name="Column43" Width="94.5"/>
+        <TableColumn Name="Column44"/>
+        <TableColumn Name="Column45"/>
+        <TableColumn Name="Column46"/>
+        <TableColumn Name="Column47"/>
+        <TableColumn Name="Column48"/>
+        <TableColumn Name="Column49"/>
+        <TableColumn Name="Column50"/>
+        <TableColumn Name="Column51"/>
+        <TableColumn Name="Column52"/>
+        <TableRow Name="Row24" AutoSize="true">
+          <TableCell Name="Cell163" Border.Lines="Right" Text="[Booking1.Despatchby]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+          <TableCell Name="Cell164" Border.Lines="Right" Text="[FormatDateTime([Booking1.DespatchDateTime],&quot;dd/MM/yyyy HH:mm&quot;)]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+          <TableCell Name="Cell165" Border.Lines="Right" Text="[FormatDateTime([Booking1.AcceptedDateTime],&quot;HH:mm&quot;)]&#13;&#10;" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+          <TableCell Name="Cell166" Border.Lines="Right" Text="[Booking1.AcceptedDateTime]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+          <TableCell Name="Cell167" Border.Lines="Right" Text="[Booking1.ArrivalDateTime]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+          <TableCell Name="Cell168" Border.Lines="Right" Text="[Booking1.POBDateTime]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+          <TableCell Name="Cell169" Border.Lines="Right" Text="[Booking1.STCDateTime]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+          <TableCell Name="Cell170" Border.Lines="Right" Text="[Booking1.ClearedDateTime]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+          <TableCell Name="Cell171" Border.Lines="Right" Text="[Booking1.FareRate]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+          <TableCell Name="Cell172" Text="[Booking1.StatusName]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+        </TableRow>
+      </TableObject>
+      <DataHeaderBand Name="DataHeader1" Top="285.05" Width="718.2" Height="56.7" CanGrow="true" CanShrink="true" CanBreak="true">
+        <TextObject Name="Text11" Left="9.45" Top="15.45" Width="151.2" Height="18.9" Border.Lines="Left, Right, Top" Text="Last Activity" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+        <TableObject Name="Table1" Left="9.45" Top="37.8" Width="689.85" Height="18.9" Border.Lines="All">
+          <TableColumn Name="Column33" Width="94.5"/>
+          <TableColumn Name="Column34"/>
+          <TableColumn Name="Column35"/>
+          <TableColumn Name="Column36"/>
+          <TableColumn Name="Column37"/>
+          <TableColumn Name="Column38"/>
+          <TableColumn Name="Column39"/>
+          <TableColumn Name="Column40"/>
+          <TableColumn Name="Column41"/>
+          <TableColumn Name="Column42"/>
+          <TableRow Name="Row23" AutoSize="true">
+            <TableCell Name="Cell133" Border.Lines="Right" Text="Job Despatched By" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+            <TableCell Name="Cell134" Border.Lines="Right" Text="Job Despatched On" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+            <TableCell Name="Cell135" Border.Lines="Right" Text="Driver" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+            <TableCell Name="Cell136" Border.Lines="Right" Text="Accept" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+            <TableCell Name="Cell137" Border.Lines="Right" Text="Arrived" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+            <TableCell Name="Cell158" Border.Lines="Right" Text="POB" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+            <TableCell Name="Cell159" Border.Lines="Right" Text="STC" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+            <TableCell Name="Cell160" Border.Lines="Right" Text=" Cleared    " HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+            <TableCell Name="Cell161" Border.Lines="Right" Text="Fare (£)" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+            <TableCell Name="Cell162" Text="Status" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+          </TableRow>
+        </TableObject>
+      </DataHeaderBand>
+    </DataBand>
+    <DataBand Name="Data3" Top="430.35" Width="718.2" Height="18.9" CanGrow="true" CanShrink="true" CanBreak="true" DataSource="vw_BookingUpdates">
+      <TableObject Name="Table7" Left="9.45" Width="689.85" Height="18.9" Border.Lines="All">
+        <TableColumn Name="Column56" Width="415.8"/>
+        <TableColumn Name="Column57" Width="160.65"/>
+        <TableColumn Name="Column58" Width="113.4"/>
+        <TableRow Name="Row26">
+          <TableCell Name="Cell176" Border.Lines="Right" Text="[Booking.AfterUpdate]" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt"/>
+          <TableCell Name="Cell177" Border.Lines="Right" Text="[Booking.User]" HorzAlign="Center" Font="Arial, 9pt"/>
+          <TableCell Name="Cell178" Text="[FormatDateTime([Booking.UpdateDate],&quot;dd/MM/yyyy HH:mm&quot;)]" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt"/>
+        </TableRow>
+      </TableObject>
+      <DataHeaderBand Name="DataHeader2" Top="368.65" Width="718.2" Height="57.7" CanBreak="true">
+        <TextObject Name="Text12" Left="9.45" Top="16.45" Width="122.85" Height="18.9" Border.Lines="Left, Right, Top" Text="Activity Details" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+        <TableObject Name="Table2" Left="9.45" Top="38.8" Width="689.85" Height="18.9" Border.Lines="All">
+          <TableColumn Name="Column53" Width="415.8"/>
+          <TableColumn Name="Column54" Width="160.65"/>
+          <TableColumn Name="Column55" Width="113.4"/>
+          <TableRow Name="Row25">
+            <TableCell Name="Cell173" Border.Lines="Right" Text="Activity" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+            <TableCell Name="Cell174" Border.Lines="Right" Text="User" HorzAlign="Center" Font="Arial, 11pt, style=Bold"/>
+            <TableCell Name="Cell175" Text="Update On" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+          </TableRow>
+        </TableObject>
+      </DataHeaderBand>
+    </DataBand>
+    <DataBand Name="Data4" Top="513.5" Width="718.2" Height="18.9" CanGrow="true" CanShrink="true" CanBreak="true" DataSource="vw_BookingUpdates">
+      <TableObject Name="Table8" Left="9.45" Width="689.69" Height="18.9" Border.Lines="All">
+        <TableColumn Name="Column63" Width="94.46"/>
+        <TableColumn Name="Column64" Width="217.31"/>
+        <TableColumn Name="Column65" Width="283.46"/>
+        <TableColumn Name="Column66" Width="94.46"/>
+        <TableRow Name="Row28" AutoSize="true">
+          <TableCell Name="Cell183" Border.Lines="Right" Text="[Booking.User]" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell184" Border.Lines="Right" Text="[Booking.BeforeUpdate]" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell185" Border.Lines="Right" Text="[Booking.AfterUpdate]" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell186" Text="[FormatDateTime([Booking.UpdateDate],&quot;dd/MM/yyyy HH:mm&quot;)]" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+        </TableRow>
+      </TableObject>
+      <TableObject Name="Table10" Left="9.45" Width="689.69" Height="18.9" Border.Lines="All">
+        <TableColumn Name="Column71" Width="94.46"/>
+        <TableColumn Name="Column72" Width="217.31"/>
+        <TableColumn Name="Column73" Width="283.46"/>
+        <TableColumn Name="Column74" Width="94.46"/>
+        <TableRow Name="Row30" AutoSize="true">
+          <TableCell Name="Cell191" Border.Lines="Right" Text="[Booking.User]" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell192" Border.Lines="Right" Text="[Booking.BeforeUpdate]" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell193" Border.Lines="Right" Text="[Booking.AfterUpdate]" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell194" Text="[FormatDateTime([Booking.UpdateDate],&quot;dd/MM/yyyy HH:mm&quot;)]" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+        </TableRow>
+      </TableObject>
+      <DataHeaderBand Name="DataHeader3" Top="453.25" Width="718.2" Height="56.25" CanGrow="true" CanShrink="true" CanBreak="true">
+        <TextObject Name="Text2" Left="28.35" Top="9.45" Width="670.95" Height="18.9" CanGrow="true" CanShrink="true" Text="Booking Updates Against: [Booking1.BookingNo]" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+        <TableObject Name="Table3" Left="9.45" Top="37.35" Width="689.69" Height="18.9" Border.Lines="All">
+          <TableColumn Name="Column59" Width="94.46"/>
+          <TableColumn Name="Column60" Width="217.31"/>
+          <TableColumn Name="Column61" Width="283.46"/>
+          <TableColumn Name="Column62" Width="94.46"/>
+          <TableRow Name="Row27">
+            <TableCell Name="Cell179" Border.Lines="Right" Text="User" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+            <TableCell Name="Cell180" Border.Lines="Right" Text="Before" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+            <TableCell Name="Cell181" Border.Lines="Right" Text="After" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+            <TableCell Name="Cell182" Text="Update Date" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+          </TableRow>
+        </TableObject>
+      </DataHeaderBand>
+    </DataBand>
+    <DataBand Name="Data5" Top="587.2" Width="718.2" Height="21.9" CanBreak="true" DataSource="vw_BookingUpdates">
+      <TableObject Name="Table11" Left="9.45" Top="-1" Width="689.69" Height="18.9" Border.Lines="All">
+        <TableColumn Name="Column75" Width="94.46"/>
+        <TableColumn Name="Column76" Width="217.31"/>
+        <TableColumn Name="Column77" Width="283.46"/>
+        <TableColumn Name="Column78" Width="94.46"/>
+        <TableRow Name="Row31" AutoSize="true">
+          <TableCell Name="Cell195" Border.Lines="Right" Text="[Booking.User]" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell196" Border.Lines="Right" Text="[Booking.BeforeUpdate]" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell197" Border.Lines="Right" Text="[Booking.AfterUpdate]" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell198" Text="[FormatDateTime([Booking.UpdateDate],&quot;dd/MM/yyyy HH:mm&quot;)]" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+        </TableRow>
+      </TableObject>
+      <DataHeaderBand Name="DataHeader5" Top="536.4" Width="718.2" Height="46.8" CanBreak="true">
+        <TextObject Name="Text13" Left="9.45" Top="7" Width="160.65" Height="18.9" Border.Lines="Left, Right, Top" Text="Web Booking Status" VertAlign="Center" Font="Arial, 11pt, style=Bold"/>
+        <TableObject Name="Table9" Left="9.45" Top="27.9" Width="689.69" Height="18.9" Border.Lines="All">
+          <TableColumn Name="Column67" Width="94.46"/>
+          <TableColumn Name="Column68" Width="217.31"/>
+          <TableColumn Name="Column69" Width="283.46"/>
+          <TableColumn Name="Column70" Width="94.46"/>
+          <TableRow Name="Row29">
+            <TableCell Name="Cell187" Border.Lines="Right" Text="User" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+            <TableCell Name="Cell188" Border.Lines="Right" Text="Before" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+            <TableCell Name="Cell189" Border.Lines="Right" Text="After" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+            <TableCell Name="Cell190" Text="Update Date" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+          </TableRow>
+        </TableObject>
+      </DataHeaderBand>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="613.1" Width="718.2" Height="37.8"/>
+  </ReportPage>
+</Report>

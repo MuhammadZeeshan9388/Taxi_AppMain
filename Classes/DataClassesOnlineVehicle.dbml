@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="onlineWebVehicleManagementSystem" Class="DataClassesOnlineVehicleDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=213.171.197.98,58417;Initial Catalog=onlineWebVehicleManagementSystem;User ID=Dur2cz31ey4" SettingsObjectName="Taxi_AppMain.Properties.Settings" SettingsPropertyName="onlineWebVehicleManagementSystemConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Clients" Member="Clients">
+    <Type Name="Client">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ClientTypeID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsExpired" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ExpiryReason" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Row_InsertedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Row_UpdatedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Row_InsertedBy" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Row_UpdatedBy" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Client_ViaPoint" Member="ViaPoints" ThisKey="ID" OtherKey="ClientID" Type="ViaPoint" />
+      <Association Name="Client_OnlineVehicle" Member="OnlineVehicles" Storage="_Vehicles" ThisKey="ID" OtherKey="ClientID" Type="OnlineVehicle" />
+      <Association Name="Client_OnlineBooking" Member="OnlineBookings" Storage="_Bookings" ThisKey="ID" OtherKey="ClientID" Type="OnlineBooking" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserType" Member="UserTypes">
+    <Type Name="UserType">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViaPoints" Member="ViaPoints">
+    <Type Name="ViaPoint">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SequenceNumber" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ViaPoint" Member="ViaPoint1" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="BookingID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ClientID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="Client_ViaPoint" Member="Client" ThisKey="ClientID" OtherKey="ID" Type="Client" IsForeignKey="true" />
+      <Association Name="OnlineBooking_ViaPoint" Member="Booking" ThisKey="BookingID" OtherKey="ID" Type="OnlineBooking" IsForeignKey="true" />
+      <Association Name="OnlineBooking_ViaPoint1" Member="OnlineBooking" Storage="_Booking1" ThisKey="BookingID" OtherKey="ID" Type="OnlineBooking" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AccountUsers" Member="AccountUsers">
+    <Type Name="AccountUser">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="LoginID" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="MobileNumber" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="AccountID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsertedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClientID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="companyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserTypeId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="AccountNumber" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AccountName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CompanyName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CompanyEmail" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="AccountType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AccountAddress" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vehicle" Member="OnlineVehicles">
+    <Type Name="OnlineVehicle">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FleetImage" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NoOfPassengers" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NoOfLuggages" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="HandLuggages" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ClientID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsDefault" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsCall" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CallMessage" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="StartRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IsShowReserve" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowMessage" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsShowVehicle" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Client_OnlineVehicle" Member="Client" ThisKey="ClientID" OtherKey="ID" Type="Client" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Booking" Member="OnlineBookings">
+    <Type Name="OnlineBooking">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClientID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CompanyAccountCode" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="BookingRefrenceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[From]" Member="From" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FromType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FromTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[To]" Member="To" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ToType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ToTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FromFlightNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ToFlightNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FromDoorNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ToDoorNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ComingFrom" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Vehiclename" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PickupDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PickupTime" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NoOfPassangers" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NoOfLuggages" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Passengerphone" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PassangerFirstName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PassangerLastName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="NoOfHandLuggages" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="SpecialRequirement" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ViaPoints" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="PassengerMobile" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FromStreet" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IsUpdated" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="JourneyTypeid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fares" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ReturnFares" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ToStreet" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Row_UpdateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Row_UpdatedBy" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Row_InsertedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Row_InsertedBy" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="UpdateMessage" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="BookingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReturnDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReturnTime" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PaymentType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BookingStatus" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="BookerFullName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="BookerEmail" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="BookerMobileNumber" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="BookerHomeNumber" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="EmailData" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Email_Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TransactionId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AccountID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SystemJobID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="AccountUserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WebMemberID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CardTypeID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="OrderNumber" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="BabySeat1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="BabySeat2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="PostedFrom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DriverStatus" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="vehicleID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NameBoard" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WaitandReturnTime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsTransactionSuccessful" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Distance" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ComingTo" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="AccountUserName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="IsHourlyBooking" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CurrencyCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CruiseName" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="isDiscountBooking" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="StatusUpdated" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TrackingLink" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CancelBookingNote" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DayhireHours" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DispatchBookingNo" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="FromAdditionalInfo" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ToAdditionalInfo" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CompanyName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DepartmentName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AccountNo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CostCentreNo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PurchaseOrderNo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="OnlineBooking_ViaPoint" Member="ViaPoints1" ThisKey="ID" OtherKey="BookingID" Type="ViaPoint" />
+      <Association Name="OnlineBooking_ViaPoint1" Member="ViaPoints2" ThisKey="ID" OtherKey="BookingID" Type="ViaPoint" />
+      <Association Name="OnlineBooking_OnlineBooking" Member="Booking2" ThisKey="ID" OtherKey="ID" Type="OnlineBooking" Cardinality="One" />
+      <Association Name="OnlineBooking_OnlineBooking" Member="Booking1" ThisKey="ID" OtherKey="ID" Type="OnlineBooking" IsForeignKey="true" />
+      <Association Name="Client_OnlineBooking" Member="Client" ThisKey="ClientID" OtherKey="ID" Type="Client" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.stp_UpdateFetchedBookingStatus" Method="stp_UpdateFetchedBookingStatus">
+    <Parameter Name="BookingId" Parameter="bookingId" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="SystemBookingId" Parameter="systemBookingId" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="UpdateMessage" Parameter="updateMessage" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="UpdateOn" Parameter="updateOn" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="UpdateBy" Parameter="updateBy" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spUpdateBookingConfirmationFromApp2" Method="spUpdateBookingConfirmationFromApp2">
+    <Parameter Name="DefaultClientId" Parameter="defaultClientId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BookingNo" Parameter="bookingNo" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FareRate" Parameter="fareRate" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="WaitingTime" Parameter="waitingTime" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PickupDate" Parameter="pickupDate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PickupTime" Parameter="pickupTime" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spUpdateBookingConfirmationFromApp3" Method="spUpdateBookingConfirmationFromApp3">
+    <Parameter Name="DefaultClientId" Parameter="defaultClientId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BookingNo" Parameter="bookingNo" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FareRate" Parameter="fareRate" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="WaitingTime" Parameter="waitingTime" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PickupDate" Parameter="pickupDate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PickupTime" Parameter="pickupTime" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ReturnDate" Parameter="returnDate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ReturnTime" Parameter="returnTime" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ReturnFare" Parameter="returnFare" Type="System.Decimal" DbType="Decimal" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_UpdateAppBookingStatus" Method="SP_UpdateAppBookingStatus">
+    <Parameter Name="DefaultClientId" Parameter="defaultClientId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BookingNo" Parameter="bookingNo" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_InsertBooking" Method="SP_InsertBooking">
+    <Parameter Name="From" Parameter="from" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="FromType" Parameter="fromType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="To" Parameter="to" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="ToType" Parameter="toType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FromFlightNumber" Parameter="fromFlightNumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ToFlightNumber" Parameter="toFlightNumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FromDoorNumber" Parameter="fromDoorNumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ToDoorNumber" Parameter="toDoorNumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ComingFrom" Parameter="comingFrom" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Vehiclename" Parameter="vehiclename" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="PickupDate" Parameter="pickupDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="PickupTime" Parameter="pickupTime" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NoOfPassangers" Parameter="noOfPassangers" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="NoOfLuggages" Parameter="noOfLuggages" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Passengerphone" Parameter="passengerphone" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="PassangerFirstName" Parameter="passangerFirstName" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="PassangerLastName" Parameter="passangerLastName" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="NoOfHandLuggages" Parameter="noOfHandLuggages" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="SpecialRequirement" Parameter="specialRequirement" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="BabySeat1" Parameter="babySeat1" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="BabySeat2" Parameter="babySeat2" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="ViaPoints" Parameter="viaPoints" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="PassengerMobile" Parameter="passengerMobile" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="FromStreet" Parameter="fromStreet" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="IsUpdated" Parameter="isUpdated" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="JourneyTypeid" Parameter="journeyTypeid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Fares" Parameter="fares" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="ReturnFares" Parameter="returnFares" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="ToStreet" Parameter="toStreet" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Row_UpdateDate" Parameter="row_UpdateDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Row_UpdatedBy" Parameter="row_UpdatedBy" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Row_InsertedDate" Parameter="row_InsertedDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Row_InsertedBy" Parameter="row_InsertedBy" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="UpdateMessage" Parameter="updateMessage" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="BookingDate" Parameter="bookingDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ReturnDate" Parameter="returnDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ReturnTime" Parameter="returnTime" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="PaymentType" Parameter="paymentType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ClientID" Parameter="clientID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="BookingStatus" Parameter="bookingStatus" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="BookerFullName" Parameter="bookerFullName" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="BookerEmail" Parameter="bookerEmail" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="BookerMobileNumber" Parameter="bookerMobileNumber" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="BookerHomeNumber" Parameter="bookerHomeNumber" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="EmailData" Parameter="emailData" Type="System.String" DbType="Text" />
+    <Parameter Name="Email_Status" Parameter="email_Status" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="TransactionId" Parameter="transactionId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AccountID" Parameter="accountID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SystemJobID" Parameter="systemJobID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="AccountUserID" Parameter="accountUserID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CompanyId" Parameter="companyId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="WebMemberID" Parameter="webMemberID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CardTypeID" Parameter="cardTypeID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="FromTypeId" Parameter="fromTypeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Totypeid" Parameter="totypeid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VehicleId" Parameter="vehicleId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="WaitandReturnTime" Parameter="waitandReturnTime" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NameBoard" Parameter="nameBoard" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="ParentId" Parameter="parentId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="OrderNumber" Parameter="orderNumber" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CompanyAccountCode" Parameter="companyAccountCode" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="BookingRefrenceID" Parameter="bookingRefrenceID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Distance" Parameter="distance" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="IsTransactionSuccessful" Parameter="isTransactionSuccessful" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="CompanyEmail" Parameter="companyEmail" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="AccountLoginID" Parameter="accountLoginID" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="ComingTo" Parameter="comingTo" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="AccountUserName" Parameter="accountUserName" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="IsHourlyBooking" Parameter="isHourlyBooking" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="CurrencyCode" Parameter="currencyCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="CruiseName" Parameter="cruiseName" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="StatusUpdate" Parameter="statusUpdate" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DispatchBookingNo" Parameter="dispatchBookingNo" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="FromAdditionalInfo" Parameter="fromAdditionalInfo" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="ToAdditionInfo" Parameter="toAdditionInfo" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="CompanyName" Parameter="companyName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DepartmentName" Parameter="departmentName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AccountNo" Parameter="accountNo" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CostCentreNo" Parameter="costCentreNo" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="PurchaseOrderNo" Parameter="purchaseOrderNo" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="SP_InsertBookingResult">
+      <Column Name="SCOPE_IDENTITY" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_UpdateBooking" Method="SP_UpdateBooking">
+    <Parameter Name="From" Parameter="from" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="FromType" Parameter="fromType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="To" Parameter="to" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="ToType" Parameter="toType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FromFlightNumber" Parameter="fromFlightNumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ToFlightNumber" Parameter="toFlightNumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FromDoorNumber" Parameter="fromDoorNumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ToDoorNumber" Parameter="toDoorNumber" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ComingFrom" Parameter="comingFrom" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Vehiclename" Parameter="vehiclename" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="PickupDate" Parameter="pickupDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="PickupTime" Parameter="pickupTime" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NoOfPassangers" Parameter="noOfPassangers" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="NoOfLuggages" Parameter="noOfLuggages" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Passengerphone" Parameter="passengerphone" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="PassangerFirstName" Parameter="passangerFirstName" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="PassangerLastName" Parameter="passangerLastName" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="NoOfHandLuggages" Parameter="noOfHandLuggages" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="SpecialRequirement" Parameter="specialRequirement" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="BabySeat1" Parameter="babySeat1" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="BabySeat2" Parameter="babySeat2" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="ViaPoints" Parameter="viaPoints" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="PassengerMobile" Parameter="passengerMobile" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="FromStreet" Parameter="fromStreet" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="IsUpdated" Parameter="isUpdated" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="JourneyTypeid" Parameter="journeyTypeid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Fares" Parameter="fares" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="ReturnFares" Parameter="returnFares" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="ToStreet" Parameter="toStreet" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Row_UpdateDate" Parameter="row_UpdateDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Row_UpdatedBy" Parameter="row_UpdatedBy" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Row_InsertedDate" Parameter="row_InsertedDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Row_InsertedBy" Parameter="row_InsertedBy" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="UpdateMessage" Parameter="updateMessage" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="BookingDate" Parameter="bookingDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ReturnDate" Parameter="returnDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ReturnTime" Parameter="returnTime" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="PaymentType" Parameter="paymentType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ClientID" Parameter="clientID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="BookingStatus" Parameter="bookingStatus" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="BookerFullName" Parameter="bookerFullName" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="BookerEmail" Parameter="bookerEmail" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="BookerMobileNumber" Parameter="bookerMobileNumber" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="BookerHomeNumber" Parameter="bookerHomeNumber" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="EmailData" Parameter="emailData" Type="System.String" DbType="Text" />
+    <Parameter Name="Email_Status" Parameter="email_Status" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="TransactionId" Parameter="transactionId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AccountID" Parameter="accountID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SystemJobID" Parameter="systemJobID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="AccountUserID" Parameter="accountUserID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="WebMemberID" Parameter="webMemberID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CardTypeID" Parameter="cardTypeID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="FromTypeId" Parameter="fromTypeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Totypeid" Parameter="totypeid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VehicleId" Parameter="vehicleId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CompanyID" Parameter="companyID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="WaitandReturnTime" Parameter="waitandReturnTime" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ParentID" Parameter="parentID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IsTransactionSuccessful" Parameter="isTransactionSuccessful" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="OrderNumber" Parameter="orderNumber" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="StatusUpdated" Parameter="statusUpdated" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Distance" Parameter="distance" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="DispatchBookingNo" Parameter="dispatchBookingNo" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

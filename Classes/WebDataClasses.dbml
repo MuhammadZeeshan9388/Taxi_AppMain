@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="OnlineTaxiQuickBooking" Class="WebDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=213.171.197.98,58416;Initial Catalog=OnlineTaxiQuickBooking;User ID=online" SettingsObjectName="Taxi_AppMain.Properties.Settings" SettingsPropertyName="OnlineTaxiQuickBookingConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Fare" Member="Fares">
+    <Type Name="Fare">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VehicleID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="InsDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CLientID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Location" Member="Locations">
+    <Type Name="Location">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="LocationTypeID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PostCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="SortBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsertedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClientID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vehicle" Member="Vehicles">
+    <Type Name="Vehicle">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NoOfPassengers" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NoOfLuggages" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="HandLuggages" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="StartRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IncrementDistance" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IncrementRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="StartRateValidMiles" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClientID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AccountsBooking" Member="AccountsBookings">
+    <Type Name="AccountsBooking">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BookingId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="AccountId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SystemJobId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="WebBooking_AccountsBooking" Member="WebBooking" ThisKey="BookingId" OtherKey="ID" Type="WebBooking" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CLients" Member="CLients">
+    <Type Name="CLient" Id="ID1">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LicenseExpired" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ClientTypeID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Script" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SmsType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="InstallationDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="LastBackUpDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="LicenseExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="CLient_WebBooking" Member="WebBookings" ThisKey="ID" OtherKey="CLientID" Type="WebBooking" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Account_Details" Member="Account_Details">
+    <Type Name="Account_Detail">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccountNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Accounts" Member="Accounts">
+    <Type Name="Account">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ClientId" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LoginId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AccountName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AccountId" Type="System.Int32" DbType="Int" IsPrimaryKey="true" CanBeNull="true" />
+      <Column Name="AccountNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Fare_Percentage" Member="Fare_Percentages">
+    <Type Name="Fare_Percentage">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VehicleID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsAmountWise" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Percentage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ClientID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Booking" Member="WebBookings">
+    <Type Name="WebBooking">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[From]" Member="From" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FromType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[To]" Member="To" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ToType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FlightNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ToDoorNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ComingFrom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VehicleName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="PickupDate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PickupTime" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NoOfPassangers" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NoOfLuggages" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PassengerPhone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NoOfHandLuggages" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SpecialRequirement" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FromOther" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PassengerMobile" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FromDoor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FromStreet" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IsUpdated" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="JourneyTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fares" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ReturnFares" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ToStreet" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UpdatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UpdateMessage" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="BookingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReturnDate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ReturnTime" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PaymentType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CLientID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="WebBooking_AccountsBooking" Member="BookingAccount" Storage="_AccountsBookings" ThisKey="ID" OtherKey="BookingId" Type="AccountsBooking" Cardinality="One" />
+      <Association Name="WebBooking_WebBooking_ViaLocation" Member="WebBooking_ViaLocations" ThisKey="ID" OtherKey="BookingId" Type="WebBooking_ViaLocation" />
+      <Association Name="CLient_WebBooking" Member="CLient" ThisKey="CLientID" OtherKey="ID" Type="CLient" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Booking_ViaLocations" Member="WebBooking_ViaLocations">
+    <Type Name="WebBooking_ViaLocation">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BookingId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="ViaLocValue" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="WebBooking_WebBooking_ViaLocation" Member="WebBooking" ThisKey="BookingId" OtherKey="ID" Type="WebBooking" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Booking_BookerDetail" Member="Booking_BookerDetails">
+    <Type Name="Booking_BookerDetail">
+      <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BookerFullName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="BookerEmail" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="BookingMobileNo" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="BookerHomeNo" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="BookingId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CreditData" Member="CreditDatas">
+    <Type Name="CreditData">
+      <Column Name="BookingId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CardNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Expiry" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SecurityCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CardRegisterAddress" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CardType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AddressLine2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Town" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Postcode" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.stp_VerifyLicense" Method="stp_VerifyLicense">
+    <Parameter Name="ClientName" Parameter="clientName" Type="System.String" DbType="VarChar(100)" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.stp_UpdateFetchedBookingStatus" Method="stp_UpdateFetchedBookingStatus">
+    <Parameter Name="BookingId" Parameter="bookingId" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="SystemBookingId" Parameter="systemBookingId" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="UpdateMessage" Parameter="updateMessage" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="UpdateOn" Parameter="updateOn" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="UpdateBy" Parameter="updateBy" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spUpdateBookingFromApp" Method="spUpdateBookingFromApp">
+    <Parameter Name="DefaultClientId" Parameter="defaultClientId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BookingNo" Parameter="bookingNo" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spGetFare_Milevise" Method="spGetFare_Milevise">
+    <Parameter Name="milesString" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="ClientID" Parameter="clientID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="FromType" Parameter="fromType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IncVal" Parameter="incVal" Type="System.Decimal" DbType="Decimal" />
+    <ElementType Name="spGetFare_MileviseResult">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NoOfPassengers" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NoOfLuggages" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="HandLuggages" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="StartRate" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Logo" Type="System.String" DbType="VarChar(117)" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fare" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="ReturnFare" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.stp_VerifyClientAppAccount" Method="stp_VerifyClientAppAccount">
+    <Parameter Name="DeviceInfo" Parameter="deviceInfo" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="AccountCode" Parameter="accountCode" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="DeviceId" Parameter="deviceId" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="RegisteredFrom" Parameter="registeredFrom" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="stp_VerifyClientAppAccountResult">
+      <Column Name="VerifyingColumn" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetFare_LocationVise1" Method="spGetFare_LocationVise1">
+    <Parameter Name="ClientID" Parameter="clientID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="FromPostCode" Parameter="fromPostCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="ToPostCode" Parameter="toPostCode" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="FromType" Parameter="fromType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ToType" Parameter="toType" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="spGetFare_LocationVise1Result">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NoOfPassengers" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NoOfLuggages" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="HandLuggages" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="StartRate" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="IncrementRate" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="StartRateValidMiles" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Logo" Type="System.String" DbType="VarChar(117)" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fare" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="ReturnFare" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.stp_CalculateFaresCustomerApp2" Method="stp_CalculateFaresCustomerApp2">
+    <Parameter Name="milesString" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="ClientID" Parameter="clientID" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.stp_CalculateFares2" Method="stp_CalculateFares2">
+    <Parameter Name="milesString" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="ClientID" Parameter="clientID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="FromType" Parameter="fromType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="IncVal" Parameter="incVal" Type="System.Decimal" DbType="Decimal" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spUpdateBookingConfirmationFromApp" Method="spUpdateBookingConfirmationFromApp">
+    <Parameter Name="DefaultClientId" Parameter="defaultClientId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BookingNo" Parameter="bookingNo" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FareRate" Parameter="fareRate" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="WaitingTime" Parameter="waitingTime" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spUpdateBookingConfirmationFromApp2" Method="spUpdateBookingConfirmationFromApp2">
+    <Parameter Name="DefaultClientId" Parameter="defaultClientId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BookingNo" Parameter="bookingNo" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FareRate" Parameter="fareRate" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="WaitingTime" Parameter="waitingTime" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PickupDate" Parameter="pickupDate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PickupTime" Parameter="pickupTime" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spUpdateBookingConfirmationFromApp3" Method="spUpdateBookingConfirmationFromApp3">
+    <Parameter Name="DefaultClientId" Parameter="defaultClientId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BookingNo" Parameter="bookingNo" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="FareRate" Parameter="fareRate" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="WaitingTime" Parameter="waitingTime" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PickupDate" Parameter="pickupDate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PickupTime" Parameter="pickupTime" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ReturnDate" Parameter="returnDate" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ReturnTime" Parameter="returnTime" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ReturnFare" Parameter="returnFare" Type="System.Decimal" DbType="Decimal" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

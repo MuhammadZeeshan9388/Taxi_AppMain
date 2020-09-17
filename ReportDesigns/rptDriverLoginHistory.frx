@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/14/2020 14:48:28" ReportInfo.Modified="09/14/2020 14:53:34" ReportInfo.CreatorVersion="2020.2.6.0">
+  <Dictionary>
+    <Parameter Name="ReportHeader" DataType="System.String"/>
+    <Parameter Name="Address" DataType="System.String"/>
+    <Parameter Name="Telephone" DataType="System.String"/>
+    <Parameter Name="Criteria" DataType="System.String"/>
+    <Parameter Name="Sum_EarnValue" DataType="System.String"/>
+    <Parameter Name="Sum_JobsDone" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" LeftMargin="2.54" TopMargin="5.08" RightMargin="2.54" BottomMargin="5.08" Watermark.Font="Arial, 60pt">
+    <PageHeaderBand Name="PageHeader1" Width="774.6" Height="167.25" PrintOn="FirstPage, LastPage, OddPages, EvenPages, RepeatedBand">
+      <TextObject Name="textbox7" Left="624" Width="144" Height="54.9" CanGrow="true" Text="Login History" Padding="2, 2, 2, 2" Font="Arial, 16pt, style=Bold"/>
+      <TextObject Name="textbox16" Left="624" Top="64.35" Width="144" Height="71.25" CanGrow="true" Text="=Parameters!Report_Parameter_Criteria.Value" Padding="2, 2, 2, 2" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="textbox29" Left="132" Top="69.45" Width="444" Height="24" CanGrow="true" Text="=Parameters!Report_Parameter_Address.Value" Padding="2, 2, 2, 2" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="textbox19" Left="204" Top="112.35" Width="288" Height="24" CanGrow="true" Text="=Parameters!Report_Parameter_Telephone.Value" Padding="2, 2, 2, 2" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="textbox50" Left="234" Top="24" Width="264" Height="36" CanGrow="true" Text="=Parameters!Report_Parameter_Header.Value" Font="Arial, 10pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="317" Width="774.6" Height="162.65">
+      <TableObject Name="table1" Left="45.45" Top="68.4" Width="708" Height="84.8">
+        <TableColumn Name="Column1" Width="204"/>
+        <TableColumn Name="Column2" Width="180"/>
+        <TableColumn Name="Column3" Width="132"/>
+        <TableColumn Name="Column4" Width="96"/>
+        <TableColumn Name="Column5" Width="96"/>
+        <TableRow Name="Row1" Height="28.8">
+          <TableCell Name="Cell1" CanGrow="true" Text="Login Date Time" Padding="2, 2, 2, 2" Font="Arial, 10pt"/>
+          <TableCell Name="Cell2" CanGrow="true" Text="Logout Date Time" Padding="2, 2, 2, 2" Font="Arial, 10pt"/>
+          <TableCell Name="Cell3" CanGrow="true" Text="Vehicle No" Padding="2, 2, 2, 2" Font="Arial, 10pt"/>
+          <TableCell Name="Cell4" CanGrow="true" Text="Jobs Done" Padding="2, 2, 2, 2" Font="Arial, 10pt"/>
+          <TableCell Name="Cell5" CanGrow="true" Text="Earned (£)" Padding="2, 2, 2, 2" Font="Arial, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row2" Height="28">
+          <TableCell Name="Cell6" CanGrow="true" Text="=iif(IsNothing(Fields!logindatetime.Value),&quot;&quot;, Format(Fields!logindatetime.Value,&quot;dd-MMM-yy HH:mm:ss&quot;) )" Padding="2, 2, 2, 2" Font="Arial, 10pt"/>
+          <TableCell Name="Cell7" CanGrow="true" Text="=iif(IsNothing(Fields!logoutdatetime.Value),&quot;&quot;, Format(Fields!logoutdatetime.Value,&quot;dd-MMM-yy HH:mm:ss&quot;) )" Padding="2, 2, 2, 2" Font="Arial, 10pt"/>
+          <TableCell Name="Cell8" CanGrow="true" Text="[Taxi_Model_vu_DriverLoginHistory.VehicleNo]" Padding="2, 2, 2, 2" Font="Arial, 10pt"/>
+          <TableCell Name="Cell9" CanGrow="true" Text="[Taxi_Model_vu_DriverLoginHistory.JobsDone]" Padding="2, 2, 2, 2" Font="Arial, 10pt"/>
+          <TableCell Name="Cell10" CanGrow="true" Text="[Taxi_Model_vu_DriverLoginHistory.Earned]" Padding="2, 2, 2, 2" Font="Arial, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row3" Height="28">
+          <TableCell Name="Cell11" CanGrow="true" Padding="2, 2, 2, 2" Font="Arial, 10pt"/>
+          <TableCell Name="Cell12" CanGrow="true" Padding="2, 2, 2, 2" Font="Arial, 10pt"/>
+          <TableCell Name="Cell13" CanGrow="true" Padding="2, 2, 2, 2" Font="Arial, 10pt"/>
+          <TableCell Name="Cell14" CanGrow="true" Padding="2, 2, 2, 2" Font="Arial, 10pt"/>
+          <TableCell Name="Cell15" CanGrow="true" Padding="2, 2, 2, 2" Font="Arial, 10pt"/>
+        </TableRow>
+      </TableObject>
+      <DataHeaderBand Name="DataHeader1" Top="171.25" Width="774.6" Height="141.75">
+        <TextObject Name="textbox3" Left="17.1" Top="7.65" Width="84" Height="24" CanGrow="true" Text="Driver :" Padding="2, 2, 2, 2" Font="Arial, 11pt, style=Bold"/>
+        <TextObject Name="drivername" Left="101.1" Top="7.65" Width="372" Height="24" CanGrow="true" Text="=First(Fields!driverno.Value, &quot;Taxi_Model_vu_DriverLoginHistory&quot;) + &quot; - &quot; + First(Fields!drivername.Value, &quot;Taxi_Model_vu_DriverLoginHistory&quot;)" Padding="2, 2, 2, 2" Font="Arial, 11pt, style=Bold"/>
+        <TextObject Name="textbox10" Left="17.1" Top="43.65" Width="84" Height="24" CanGrow="true" Text="Vehicle :" Padding="2, 2, 2, 2" Font="Arial, 11pt, style=Bold"/>
+        <TextObject Name="textbox5" Left="101.1" Top="43.65" Width="204" Height="24" CanGrow="true" Text="=First(Fields!vehicletype.Value)" Padding="2, 2, 2, 2" Font="Arial, 11pt, style=Bold"/>
+        <TextObject Name="textbox15" Left="17.1" Top="79.65" Width="168" Height="24" CanGrow="true" Text="Total Job(s) Done :" Padding="2, 2, 2, 2" Font="Arial, 11pt, style=Bold"/>
+        <TextObject Name="textbox12" Left="341.1" Top="55.65" Width="12" Height="24" Visible="false" CanGrow="true" Text="  Total Earned (£) :" Padding="2, 2, 2, 2" Font="Arial, 12pt, style=Bold"/>
+        <TextObject Name="textbox18" Left="185.1" Top="79.65" Width="96" Height="24" CanGrow="true" Text="[Sum_JobsDone]" Padding="2, 2, 2, 2" Font="Arial, 11pt, style=Bold"/>
+        <TextObject Name="textbox17" Left="353.1" Top="55.65" Width="12" Height="24" Visible="false" CanGrow="true" Text="[Sum_EarnValue]" Padding="2, 2, 2, 2" Font="Arial, 12pt, style=Bold"/>
+        <TableObject Name="Table2" Left="37.8" Top="122.85" Width="708.75" Height="18.9">
+          <TableColumn Name="Column6" Width="209.79"/>
+          <TableColumn Name="Column7" Width="181.44"/>
+          <TableColumn Name="Column8" Width="134.19"/>
+          <TableColumn Name="Column9" Width="105.84"/>
+          <TableColumn Name="Column10" Width="77.49"/>
+          <TableRow Name="Row4">
+            <TableCell Name="Cell16" Text="Login Date Time" Font="Arial, 10pt"/>
+            <TableCell Name="Cell17" Text="Logout Date Time" Font="Arial, 10pt"/>
+            <TableCell Name="Cell18" Font="Arial, 10pt"/>
+            <TableCell Name="Cell19" Font="Arial, 10pt"/>
+            <TableCell Name="Cell20" Font="Arial, 10pt"/>
+          </TableRow>
+        </TableObject>
+      </DataHeaderBand>
+    </DataBand>
+  </ReportPage>
+</Report>
